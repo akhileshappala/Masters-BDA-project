@@ -4,7 +4,7 @@ export const DATA_API_ROOT = `${API_DOMAIN}/v4/min`;
 export const API_REFRESH_INTERVAL = 100000; // seconds
 
 export const LOCALE_SHORTHANDS = {
-  english: 'en-US',
+
 };
 
 export const STATISTIC_CONFIGS = {
