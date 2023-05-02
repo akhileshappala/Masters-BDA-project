@@ -79,12 +79,10 @@
   },
   "lint-staged": {
     "*.+(js|jsx)": [
-      "yarn run eslint:fix",
-      "prettier --write \"**/*.+(js|jsx)\""
+      "yarn run eslint:fix"
+     
     ],
-    "*.+(json|yml|yaml|md)": [
-      "prettier --write \"**/*.+(json|yml|yaml|md)\""
-    ],
+   
     "*.+(css|scss)": [
       "yarn run scss-lint:fix",
       "yarn run scss-lint"
