@@ -138,7 +138,6 @@ function Expand({pages, setExpand, darkMode, windowSize}) {
       })}
 
       {windowSize.width < 769 && <SunMoon {...{darkMode}} />}
-
     </div>
   );
 }

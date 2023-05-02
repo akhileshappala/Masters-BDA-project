@@ -212,9 +212,7 @@ function Row({
       {showDistricts && (
         <>
           <div className="state-meta" style={{width: tableWidth}}>
-            <div className="state-meta-top">
-              
-            </div>
+            <div className="state-meta-top"></div>
           </div>
 
           <div className={classnames('row', 'heading')}>

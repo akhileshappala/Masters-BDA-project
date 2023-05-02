@@ -246,8 +246,7 @@ function Table({
 
   return (
     <div className="Table">
-      <div className="table-top">
-      </div>
+      <div className="table-top"></div>
 
       {transition(
         (style, item) =>
@@ -261,9 +260,6 @@ function Table({
                     </div>
                     <p>{t('Toggle between States/Districts')}</p>
                   </div>
-
-                 
-                 
 
                   <div className="info-item sort">
                     <div>

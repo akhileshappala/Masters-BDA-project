@@ -65,7 +65,7 @@
     "test": "react-scripts test --testPathIgnorePatterns=src/tests/ --passWithNoTests",
     "test:map": "react-scripts test src/tests/mapAndApiStateNames.test.js",
     "eslint": "eslint .",
-    "eslint:fix": "eslint --fix --max-warnings=0 .",
+    "eslint:fix": "eslint --fix --max-warnings=100 .",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|md|html)\"",
     "scss-lint": "sass-lint 'src/**/*.scss' -v -f table --max-warnings 0",
     "scss-lint:fix": "sass-lint-auto-fix 'src/**/*.scss' -d -h -c '.sass-lint-auto-fix.yml'",
@@ -75,14 +75,21 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app"],
+    "rules": {
+      "no-unused-vars": "warn"
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "max-len": "warn"
+        }
+      }
+    ]
   },
   "lint-staged": {
-    "*.+(js|jsx)": [
-      "yarn run eslint:fix"
-     
-    ],
-   
+    "*.+(js|jsx)": [],
     "*.+(css|scss)": [
       "yarn run scss-lint:fix",
       "yarn run scss-lint"

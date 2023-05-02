@@ -152,10 +152,7 @@ function Home() {
       <div className="Home">
         <div className={classnames('home-left', {expanded: expandTable})}>
           <div className="header">
-
-
             <>
-          
               {timeseries && (
                 <Suspense fallback={<div style={{minHeight: '61px'}} />}>
                   <Actions
@@ -181,12 +178,8 @@ function Home() {
               </Suspense>
             )}
 
-            <>
-             
-            </>
+            <></>
           </div>
-
-          
 
           {data && (
             <Suspense fallback={<TableLoader />}>
@@ -207,8 +200,6 @@ function Home() {
             </Suspense>
           )}
         </div>
-
-        
       </div>
 
       {isVisible && (

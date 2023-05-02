@@ -16,10 +16,7 @@ function About() {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
-    <>
-    </>
-  );
+  return <></>;
 }
 
 export default About;

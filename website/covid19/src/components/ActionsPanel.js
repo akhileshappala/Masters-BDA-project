@@ -44,11 +44,7 @@ const ActionsPanel = ({
     setShowUpdates(!showUpdates);
   }, [showUpdates, setShowUpdates, setNewUpdate]);
 
-  return (
-    <div className="ActionsPanel">
-    
-    </div>
-  );
+  return <div className="ActionsPanel"></div>;
 };
 
 export default ActionsPanel;

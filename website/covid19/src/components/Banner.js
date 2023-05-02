@@ -4,8 +4,7 @@ function Banner(props) {
   const {t} = useTranslation();
 
   return (
-    <div className="Banner fadeInDown" style={{animationDelay: '0.4s'}}>
-    </div>
+    <div className="Banner fadeInDown" style={{animationDelay: '0.4s'}}></div>
   );
 }
 
