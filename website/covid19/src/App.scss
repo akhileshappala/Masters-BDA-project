@@ -1762,23 +1762,23 @@ h6 {
   .clickable {
     transition: background 0.15s ease-in-out;
 
-    &:hover {
-      &.is-confirmed {
-        background: $cherry-light;
-      }
+    // &:hover {
+    //   &.is-confirmed {
+    //     background: $cherry-light;
+    //   }
 
-      &.is-active {
-        background: $blue-light;
-      }
+    //   &.is-active {
+    //     background: $blue-light;
+    //   }
 
-      &.is-recovered {
-        background: $green-light;
-      }
+    //   &.is-recovered {
+    //     background: $green-light;
+    //   }
 
-      &.is-deceased {
-        background: $gray-light;
-      }
-    }
+    //   &.is-deceased {
+    //     background: $gray-light;
+    //   }
+    // }
   }
 }
 

@@ -21,7 +21,7 @@ function Navbar({pages, showLanguageSwitcher, setShowLanguageSwitcher}) {
     : i18n?.options?.fallbackLng[0];
 
   const [expand, setExpand] = useState(false);
-  const darkMode = useDarkMode(true);
+  const darkMode = useDarkMode(false);
 
   useLockBodyScroll(expand);
   const windowSize = useWindowSize();
@@ -87,9 +87,6 @@ function Navbar({pages, showLanguageSwitcher, setShowLanguageSwitcher}) {
               </span>
             </Link>
 
-            <span>
-              <SunMoon {...{darkMode}} />
-            </span>
           </>
         )}
       </div>
