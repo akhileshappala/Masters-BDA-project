@@ -1,10 +1,26 @@
+import {scaleOrdinal} from 'd3-scale';
+
+// export const API_DOMAIN = 'http://localhost:8080';
+// export const API_DOMAIN =
+//   'https://raw.githubusercontent.com/shuklaayush/api/test/tmp';
+// export const API_DOMAIN = 'https://api.covid19india.org';
 export const API_DOMAIN = 'https://data.covid19india.org';
 
 export const DATA_API_ROOT = `${API_DOMAIN}/v4/min`;
 export const API_REFRESH_INTERVAL = 100000; // seconds
 
 export const LOCALE_SHORTHANDS = {
-
+  english: 'en-US',
+  hindi: 'hi',
+  telugu: 'te',
+  kannada: 'en-US',
+  gujarati: 'gu',
+  marathi: 'en-US',
+  tamil: 'ta',
+  bengali: 'bn',
+  punjabi: 'en-US',
+  malayalam: 'en-US',
+  odiya: 'en-US',
 };
 
 export const STATISTIC_CONFIGS = {
@@ -53,6 +69,50 @@ export const STATISTIC_CONFIGS = {
     hideZero: true,
     category: 'tested',
   },
+  vaccinated1: {
+    displayName: 'vaccinated (at least one dose)',
+    color: '#fb5581',
+    format: 'short',
+    showDelta: true,
+    hideZero: true,
+    category: 'vaccinated',
+  },
+  vaccinated2: {
+    displayName: 'fully vaccinated',
+    color: '#fb5581',
+    format: 'short',
+    showDelta: true,
+    hideZero: true,
+    category: 'vaccinated',
+  },
+  vaccinated: {
+    displayName: 'vaccine doses administered',
+    color: '#fb5581',
+    format: 'short',
+    showDelta: true,
+    hideZero: true,
+    category: 'vaccinated',
+  },
+  tpr: {
+    displayName: 'test positivity ratio',
+    format: '%',
+    color: '#fd7e14',
+    nonLinear: true,
+    onlyDelta7: true,
+    hideZero: true,
+    category: 'tested',
+    tableConfig: {
+      notes: 'Calculated over last 7 days',
+    },
+    hasPrimary: true,
+  },
+  cfr: {
+    displayName: 'case fatality ratio',
+    format: '%',
+    color: '#fd7e14',
+    nonLinear: true,
+    hasPrimary: true,
+  },
   recoveryRatio: {
     displayName: 'recovery ratio',
     format: '%',
@@ -70,6 +130,29 @@ export const STATISTIC_CONFIGS = {
       hide: true,
     },
     hasPrimary: true,
+  },
+  caseGrowth: {
+    displayName: 'Case Growth',
+    format: '%',
+    nonLinear: true,
+    canBeInfinite: true,
+    tableConfig: {
+      notes:
+        'Percentage growth of cases last week compared to the week a fortnight ago',
+    },
+    hasPrimary: true,
+    mapConfig: {
+      transformFn: (val) => {
+        if (val <= 0) return '≤ 0%';
+        else if (val <= 20) return '0 - 20%';
+        else if (val <= 50) return '20 - 50%';
+        else if (val > 50) return '> 50%';
+      },
+      colorScale: scaleOrdinal(
+        ['≤ 0%', '0 - 20%', '20 - 50%', '> 50%'],
+        ['#1a9850', '#fee08b', '#fc8d59', '#d73027']
+      ),
+    },
   },
   population: {
     displayName: 'population',
