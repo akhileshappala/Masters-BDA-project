@@ -1,0 +1,2 @@
+(this.webpackJsonpcovid19india=this.webpackJsonpcovid19india||[]).push([[20],{256:function(t,i,c){"use strict";c.r(i);var e=c(2),n=c(285),a=c(19);function s(){Object(n.a)().t;return Object(a.jsx)(a.Fragment,{})}i.default=Object(e.memo)(s)}}]);
+//# sourceMappingURL=20.e573414f.chunk.js.map
