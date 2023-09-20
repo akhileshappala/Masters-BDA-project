@@ -19,7 +19,6 @@ DEFAULT_ARGS = {
     "depends_on_past": False
 }
 #region_name=boto3.session.Session().region_name
-glue_client=boto3.client('glue',region_name='us-west-2',aws_access_key_id='AKIAQVWYD6YL7OLLLQGY', aws_secret_access_key='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')
 
 # Custom operator to trigger Glue job. This function utilizes boto3 client
 def run_glue_job(**kwargs):
